@@ -1,4 +1,4 @@
-
+package com.kacyakiyor.aracimkacyakti.Adapter
 
 import android.R
 import android.annotation.SuppressLint
@@ -11,6 +11,7 @@ import android.widget.PopupMenu
 import android.widget.TextView
 import androidx.appcompat.app.AlertDialog
 import androidx.recyclerview.widget.RecyclerView
+import com.kacyakiyor.aracimkacyakti.API.Araclar
 
 
 class AraclarAdapter(private val mContext:Context, private var kisilerListe:List<Araclar>) : RecyclerView.Adapter<AraclarAdapter.CardTasarimTutucu>() {
@@ -20,13 +21,13 @@ class AraclarAdapter(private val mContext:Context, private var kisilerListe:List
         var textViewKisiBilgi:TextView
         var MoreButton:ImageView
         init {
-            textViewKisiBilgi = tasarim.findViewById(R.id.AracBilgi)
-            MoreButton = tasarim.findViewById(R.id.morebutton)
+            textViewKisiBilgi = tasarim.findViewById(com.kacyakiyor.aracimkacyakti.R.id.AracBilgi)
+            MoreButton = tasarim.findViewById(com.kacyakiyor.aracimkacyakti.R.id.morebutton)
         }
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CardTasarimTutucu {
-        val tasarim = LayoutInflater.from(mContext).inflate(R.layout.card_tasarimi,parent,false)
+        val tasarim = LayoutInflater.from(mContext).inflate(com.kacyakiyor.aracimkacyakti.R.layout.card_tasarimi,parent,false)
         return CardTasarimTutucu(tasarim)
     }
 
@@ -40,11 +41,11 @@ class AraclarAdapter(private val mContext:Context, private var kisilerListe:List
         holder.textViewKisiBilgi.text = "${arac.arac_adi}  ${arac.model_tipi} ${arac.yakit_tipi}"
         holder.MoreButton.setOnClickListener{
             val popup = PopupMenu(mContext,holder.MoreButton)
-            popup.menuInflater.inflate(R.menu.popup_menu,popup.menu)
+            popup.menuInflater.inflate(com.kacyakiyor.aracimkacyakti.R.menu.popup_menu,popup.menu)
             popup.show()
             popup.setOnMenuItemClickListener {
                 when(it.itemId){
-                    R.id.action_detay->{
+                    com.kacyakiyor.aracimkacyakti.R.id.action_detay->{
                         builder = AlertDialog.Builder(mContext)
                         builder.setTitle("Araç Detay")
                             .setMessage("Araç Adı  : ${arac.arac_adi} \n" +
@@ -56,7 +57,7 @@ class AraclarAdapter(private val mContext:Context, private var kisilerListe:List
                             }.show()
                         true
                     }
-                    .R.id.action_sil->{
+                    com.kacyakiyor.aracimkacyakti.R.id.action_sil->{
                         true
                     }
                     else-> false
