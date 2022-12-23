@@ -1,4 +1,3 @@
-package com.kacyakiyor.aracimkacyakti.API
 
 import com.google.gson.annotations.Expose
 import com.google.gson.annotations.SerializedName
