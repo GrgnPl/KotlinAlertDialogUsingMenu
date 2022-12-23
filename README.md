@@ -1,3 +1,3 @@
-# KotlinAlertDialogUsingAdapter
-RecyclerView Yapısı Kullanırken Butona basılınca AlertDialog Açılması
+# KotlinPopupMenuUsingAdapter
+RecyclerView Yapısı Kullanırken Butona basılınca PopupMenu Açılması
 
